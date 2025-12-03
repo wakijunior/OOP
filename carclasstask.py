@@ -1,5 +1,5 @@
 class Car:
-    def __init__(self, brand, model, year, fuel_level, is_running, fuel_capcity = 0):
+    def __init__(self, brand, model, year, fuel_level, is_running, fuel_capcity):
         self.brand = brand
         self.model = model
         self.year = year
