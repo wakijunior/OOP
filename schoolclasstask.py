@@ -3,7 +3,7 @@ class Person:
         self.name = name
         self.age = age
     def display_info(self):
-        return f"His / Her name is {self.name} and is {self.age} years old"
+        print(f"His / Her name is {self.name} and is {self.age} years old")
     
     
 class Student(Person):
@@ -13,7 +13,8 @@ class Student(Person):
         self.course = course
 
     def display_info(self):
-        print(f"The students name is {self.name}, {self.age} years old with a student id of {self.student_id} taking {self.course}")
+        super().display_info()
+        print(f"The student id is {self.student_id} taking {self.course}")
 
 class Teacher(Person):
     def __init__(self, name, age, subject, salary):
@@ -22,7 +23,8 @@ class Teacher(Person):
         self.salary = salary
 
     def display_info(self):
-        print(f"The teachers name is {self.name} taking {self.subject} with a salary of Ksh. {self.salary}")
+        super().display_info()
+        print(f"Taking {self.subject} with a salary of Ksh. {self.salary}")
 
     
 student1 = Student("Sophie", 18, 234, "Business Administration")
