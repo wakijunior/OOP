@@ -1,34 +1,35 @@
-from flask import Flask
+from flask import Flask, render_template
 from database import get_products, get_sales
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "This is the index route"
+    return render_template("index.html")
 
 @app.route('/sales')
 def sales():
     sales = get_sales()
-    return sales
+    return render_template("sales.html")
 
 @app.route('/dashboard')
 def dashboard():
-    return 'This is the dashboard route'
+    return render_template("dashboard.html")
 
 @app.route('/login')
 def login():
-    return 'This is the login route'
+    return render_template("login.html")
 
 @app.route('/register')
 def register():
-    return 'This is the register route'
+    return render_template("register.html")
 
 @app.route('/products')
 def fetch_products():
     products = get_products()
-    return products
+    return render_template("products.html")
+
    
 
-app.run()
+app.run(debug=True)
 
