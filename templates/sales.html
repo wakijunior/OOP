@@ -8,6 +8,51 @@
     <div>
         <p>This is the sales page</p>
     </div>
+
+        <div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Sales
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Sell</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action = '/sales' method="post">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Product Id</label>
+                                <input type="text" name="pid" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp">
+                                
+                                
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Quantity</label>
+                                <input type="number" name="quantity" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">created at</label>
+                                <input type="number" name="created_at" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">add products</button>
+                    </div>
+                
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div>
         <table id="example" class="table table-striped">
         <thead>

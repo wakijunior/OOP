@@ -26,10 +26,13 @@ def add_products():
     
 
 @app.route('/sales')
-def sales():
-    sales = get_sales()
-    return render_template("sales.html",sales=sales)
-
+def make_sale():
+    pid = request.form["pid"]
+    quantity = request.form["quantity"]
+    created_at = request.form["created_at"]
+    new_sale = (pid, quantity, created_at)
+    make_sale(new_sale)
+    return redirect(url_for('/sales'))
 
 @app.route('/dashboard')
 def dashboard():
