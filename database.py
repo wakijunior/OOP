@@ -41,8 +41,33 @@ def insert_sales(values):
 def insert_sales_2(values):
     cur.execute("insert into sales(pid,quantity)values(%s,%s)",values)
     conn.commit()
-    
 
+def available_stock(pid):
+    cur.execute(f"select sum(stock_quantity)from stock where pid = {pid}")
+    total_stock = cur.fetchone()[0] or 0
+
+    cur.execute(f"select sum(quantity)from sales where pid = {pid}")
+    total_sales = cur.fetchone()[0] or 0
+
+    return total_stock - total_sales
+
+def get_stocks():
+    cur.execute("select * from stock")
+    stock = cur.fetchall()
+    return stock
+
+def insert_stocks(values):
+    cur.execute(f"insert into stock(pid,stock_quantity)values{values}")
+    conn.commit()
+
+def get_users():
+    cur.execute("select * from users")
+    users = cur.fetchall()
+    return users
+
+def insert_users(values):
+    cur.execute("insert into users(full_name, email, phone_number,password) values(%s,%s,%s,%s)",values)
+    conn.commit()
 
 
 

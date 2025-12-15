@@ -1,0 +1,31 @@
+.header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  color: rgb(160, 15, 15);
+  height: 700px;
+  width: 100%;
+}
+
+.body{
+    background-color: white;
+    max-width: 90%;
+    margin: auto;
+}
+
+/* .main{
+    background-color: peachpuff;
+} */
+
+.list{
+    list-style-type: none;
+}
+
+.navbar{
+    background-color: peachpuff;
+    color: black;
+}
+
+.navbar-logo{
+    margin-left: 30px;
+}

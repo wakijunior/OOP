@@ -11,80 +11,53 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.5/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <title>{% block title %} {%endblock%}</title>
   </head>
-  <body>
-    <div class="container">
+  <body class="body">
+    <div class="main">
       <div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div>
+            <!-- <a class="navbar-logo" href="/">MyDuka</a> -->
+            <div>
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
-                    >Home</a
-                  >
+                <li class="nav-logo" style="margin-right: 800px;"><a class="nav-link active" aria-current="page" href="/">MyDuka</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="/stock">Stocks</a></li>
+                <li class="nav-item"><a class="nav-link" href="/sales">Sales</a></li><li class="nav-item">
+                  <a class="nav-link" href="/dashboard">Dashboard</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li>
-              </ul>
-              <form class="d-flex" role="search">
-                <input
-                  class="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form>
             </div>
           </div>
         </nav>
       </div>
       
-        {% block content %} {%endblock%}
+        {% block content %} 
+        
+        {%endblock%}
 
-        <div style="margin-top: 400px;">
-            <p>FOOTER</p>
+        <div style="margin-top: 800px;">
+            <footer style="height: 200px; background-color: whitesmoke;">
+              <a href=""><img src="<i class="fa-brands fa-whatsapp"></i>" alt="Whatsapp"></a>
+              <a href=""><img src="<i class="fa-brands fa-facebook"></i>" alt="Facebook"></a>
+              <a href=""><img src="<i class="fa-brands fa-x-twitter"></i>" alt="X"></a>
+              <a href=""><img src="<i class="fa-brands fa-linkedin"></i>" alt="LinkedIn"></a>
+              <div class="horizontal-line" style="border-top: 1px solid rgb(82, 5, 5); width: 90%; margin: auto;"></div>
+              <div>
+                <ul>
+                  <li style="list-style-type: none; margin-left: 80px;">view</li>
+                  <li style="list-style-type: none; margin-left: 80px;">view</li>
+                  <li style="list-style-type: none; margin-left: 80px;">view</li>
+                  <li style="list-style-type: none; margin-left: 80px;">view</li>
+                  <li style="list-style-type: none; margin-left: 80px;">view</li>
+                </ul>
+              </div>
+            </footer>
         </div>
     </div>
 

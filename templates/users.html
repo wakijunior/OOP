@@ -3,7 +3,7 @@
 
 <div>
   <div>
-    <p>This is the sales page</p>
+    <p>This is the users page</p>
   </div>
 
   <div>
@@ -14,7 +14,7 @@
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
     >
-      Make Sales
+      Register Users
     </button>
 
     <!-- Modal -->
@@ -29,7 +29,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">
-              Making a Sale
+              registering a user
             </h1>
             <button
               type="button"
@@ -39,10 +39,10 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form action="/make_sales" method="post">
+            <form action="/register_users" method="post">
               <div class="mb-3">
-                <select class="form-select" name="pid" aria-label="Default select example">
-                  <option selected>Select a product</option>
+                <select class="form-select" name="uid" aria-label="Default select example">
+                  <!-- <option selected>Select a product</option>
                   {% for product in products %}
                   <option value="{{product[0]}}">{{product[1]}}</option>
                   {% endfor %}
@@ -101,7 +101,7 @@
         {% endfor %}
       </tbody>
     </table>
-  </div>
+  </div> -->
 </div>
 
 {% endblock %}
