@@ -39,23 +39,59 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form action="/register_users" method="post">
+            <form action="/insert_users" method="post">
               <div class="mb-3">
-                <select class="form-select" name="uid" aria-label="Default select example">
-                  <!-- <option selected>Select a product</option>
-                  {% for product in products %}
-                  <option value="{{product[0]}}">{{product[1]}}</option>
+                <!-- <select class="form-select" name="uid" aria-label="Default select example">
+                  <option selected>Insert a User</option>
+                  {% for user in users %}
+                  <option value="{{user[0]}}">{{user[1]}}</option>
                   {% endfor %}
                  
-                </select>
+                </select> -->
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label"
-                  >Quantity</label
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  name="full_name"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Email Address</label
+                >
+                <input
+                  type="text"
+                  name="email"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Phone Number</label
                 >
                 <input
                   type="number"
-                  name="quantity"
+                  name="phone_number"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="text"
+                  name="password"
                   class="form-control"
                   id="exampleInputPassword1"
                 />
@@ -70,7 +106,7 @@
                   Close
                 </button>
                 <button type="submit" class="btn btn-primary">
-                  add products
+                  add user
                 </button>
               </div>
             </form>
@@ -84,24 +120,25 @@
     <table id="example" class="table table-striped">
       <thead>
         <tr>
-          <th>Sales ID</th>
-          <th>Product ID</th>
-          <th>Quantity</th>
-          <th>Created at</th>
+          <th>User ID</th>
+          <th>Full Name</th>
+          <th>Email Address</th>
+          <th>Phone Nummber</th>
+          <!-- <th>Password</th> -->
         </tr>
       </thead>
       <tbody>
-        {% for sale in sales %}
+        {% for user in users %}
         <tr>
-          <td>{{sale[0]}}</td>
-          <td>{{sale[1]}}</td>
-          <td>{{sale[2]}}</td>
-          <td>{{sale[3]}}</td>
+          <td>{{user[0]}}</td>
+          <td>{{user[1]}}</td>
+          <td>{{user[2]}}</td>
+          <td>{{user[3]}}</td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
-  </div> -->
+  </div>
 </div>
 
 {% endblock %}

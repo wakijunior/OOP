@@ -1,4 +1,5 @@
 import psycopg2
+from datetime import datetime
 
 conn = psycopg2.connect(host='localhost',port='5432',user='postgres',password='0911',dbname='myduka')
 
@@ -60,14 +61,27 @@ def insert_stocks(values):
     cur.execute(f"insert into stock(pid,stock_quantity)values{values}")
     conn.commit()
 
+#fetching users
 def get_users():
     cur.execute("select * from users")
     users = cur.fetchall()
     return users
 
+#adding users
 def insert_users(values):
     cur.execute("insert into users(full_name, email, phone_number,password) values(%s,%s,%s,%s)",values)
     conn.commit()
 
 
+#getting sales per product
+def get_sales_per_product():
+    cur.execute("select pid,sum(quantity) as products_sold FROM sales group by pid")
+    sales_per_product =cur.fetchall()
+    return sales_per_product
+
+#getting number of sales per day
+def get_daily_sales():
+    cur.execute("select pid, sum(quantity) as sales_made from sales group by pid")
+    sale = cur.fetchall()
+    return sale
 

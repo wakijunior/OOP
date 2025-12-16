@@ -1,7 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from database import get_products, get_sales, insert_products, insert_sales, available_stock, insert_stocks, get_stocks, get_users, insert_users
 
 app = Flask(__name__)
+
+#secret key - signs session data
+app.secret_key ='mgknkognjghjkkjri4683749'
 
 @app.route("/")
 def home():
@@ -21,6 +24,7 @@ def add_products():
     selling_price = request.form["selling_price"]
     new_product = (product_name,buying_price,selling_price)
     insert_products(new_product)
+    flash("product added succesfully", 'success')
     return redirect(url_for('fetch_products'))
    
     
@@ -39,9 +43,10 @@ def make_sale():
     new_sale = (pid, quantity)
     check_stock = available_stock(pid)
     if check_stock < float(quantity):
-        print(f"insufficient stock")
+        flash("insufficient stock", 'danger')
         return redirect(url_for('fetch_sales'))
     insert_sales(new_sale)
+    flash("sale completed successfully",'success')
     return redirect(url_for('fetch_sales'))
 
 @app.route('/stock')
@@ -51,7 +56,7 @@ def fetch_stocks():
     return render_template("stock.html",stock=stock, products=products)
 
 @app.route('/insert_stock', methods=['GET','POST'])
-def insert_stocks():
+def add_stock():
     pid = request.form["pid"]
     quantity = request.form["quantity"]
     new_stock = (pid, quantity)
@@ -73,12 +78,25 @@ def register():
     return render_template("register.html")
 
 @app.route('/users')
-def get_users():
+def get_user():
     users = get_users()
-    return render_template('users.html')
+    return render_template('users.html',users=users)
 
-# @app.route('/insert_users')
-# def insert_user(values):
+@app.route('/insert_users',methods=['GET','POST'])
+def insert_user():
+    full_name = request.form['full_name']
+    email = request.form['email']
+    phone_number = request.form['phone_number']
+    password = request.form['password']
+    new_user = (full_name, email, phone_number, password)
+    insert_users(new_user)
+    return redirect(url_for("get_user"))
+    
+# sales_per_product
+# @app.route('/daily_sale')
+# def get_daily_sale():
+#     sales = get_sales()
+#     products = get_products()
 
 
 
