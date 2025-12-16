@@ -76,12 +76,60 @@ def insert_users(values):
 #getting sales per product
 def get_sales_per_product():
     cur.execute("select pid,sum(quantity) as products_sold FROM sales group by pid")
-    sales_per_product =cur.fetchall()
-    return sales_per_product
+    sales_per_product =cur.fetchone([2])
+
+    cur.execute("select * from products")
+    product_selling_price = cur.fetchone([3])
+
+    total_sale_per_product = sales_per_product * product_selling_price
+    
+    return total_sale_per_product
 
 #getting number of sales per day
 def get_daily_sales():
-    cur.execute("select pid, sum(quantity) as sales_made from sales group by pid")
+    cur.execute("select created_at, sum(quantity) as sales_made from sales group by created_at")
     sale = cur.fetchall()
     return sale
+
+#profit per product
+def get_profit_per_product():
+    cur.execute("select pid, sum(quantity) as sales_made from sales group by pid")
+    sale = cur.fetchall([2])
+
+    cur.execute(f"select * from products where pid = {id}")
+    product_buying_price = cur.fetchone([2])
+
+    total_buying_price = sale * product_buying_price
+    total_selling_price = get_sales_per_product()
+    profit = total_selling_price - total_buying_price
+
+    return profit
+
+
+#profit per day
+def get_daily_profit():
+    cur.execute("select created_at, sum(quantity) as sales_made from sales group by created_at")
+    sale = cur.fetchone(datetime.today())
+
+    cur.execute(f"select * from products where pid = {id}")
+    product_selling_price = cur.fetchone([3])
+
+    cur.execute(f"select * from products where pid = {id}")
+    product_selling_price = cur.fetchone([2])
+
+
+    cost_of_sales = sale * product_selling_price
+    total_sales = sale * product_selling_price
+    profit =total_sales - cost_of_sales
+
+    return profit
+
+    
+
+
+
+    
+
+    
+
 
