@@ -3,23 +3,32 @@
 {% block content %}
 
 
-<div>
+<div class="body">
 
-    <div>
-        <p>This is the register page</p>
-    </div>
-    <div>
-        <label for="">First Name:</label> <br>
-        <input type="text" placeholder="Enter your first name"><br><br>
-        <label for="">Last Name:</label> <br>
-        <input type="text" placeholder="Enter your last name"><br><br>
-        <label for="">Email Address:</label><br>
-        <input type="text" placeholder="Enter your email address"><br><br>
-        <label for="">Password:</label><br>
-        <input type="text" placeholder="Enter your password"><br><br>
-        <label for="">confirm your password:</label><br>
-        <input type="text" placeholder="reenter your password">
-    </div>
+    <form action="/register", method="POST">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Full Name</label>
+            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+            <input type="tel" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
 </div>
 
 {% endblock %}

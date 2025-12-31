@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page1{
+    width: 100%;
+    /* background-image: url(../images/pexels-pnw-prod-9218548.jpg); */
+    background-size: cover;
+}
+
+
+.container{
+    height: 100%;
+    width: 100%;
+}
+
+.top{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid grey;
+    background: black;
+}
+
+.logo{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo h1{
+    color: white;
+    text-transform: uppercase;
+}
+
+
+
+.list{
+    height: 100%;
+    width: 50%;
+    display: flex;
+}
+
+.list a{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+.list a:hover{
+    transition: width 2s;
+}
+
+.user{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.login{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login button{
+    height: 50%;
+    width: 70%;
+    border-radius: 30px;
+    background-color: gray;
+}
+
+.register{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register button{
+    height: 50%;
+    width: 70%;
+    border-radius: 30px;
+    background-color: rgb(61, 20, 20);
+    color: white;
+}
+
+.bottom{
+    height: 90%;
+    width: 100%;
+}
+
+.footer{
+    margin-top: 800px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upp{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* border-bottom: 1px solid grey; */
+}
+
+.upp a{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.down{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.block{
+    height: 80%;
+    width: 20%;
+    border: 1px solid gray;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.block h2{
+    color: white;
+}
+
+.block a{
+    height: 10%;
+    width: 80%;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.block input{
+    height: 10%;
+    width: 70%;
+}
+
+.block button{
+    height: 15%;
+    width: 50%;
+    border-radius: 40px;
+}
+
+.block button:hover{
+    height: 15%;
+    width: 60%;
+    background-color: beige;
+    font-size: 20px;
+}
